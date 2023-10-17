@@ -1,0 +1,27 @@
+.choice-container{
+    display: flex;
+    margin-bottom: 8px;
+    width: 50%;
+    font-size:20px;
+    border: 1.4px solid #a476ff;
+    background-color: white;
+  
+
+}
+
+.choice-container:hover{
+    cursor: pointer;
+    box-shadow: 0 6.4px 10px #b682ff;
+    transform: translateY(-2px);
+    transition: 200ms;
+}
+
+.choice-letter{
+    padding:24px 40px;
+    background-color:#a476ff;
+    color: white;
+
+}
+.choice-text{
+    padding: 24px;
+}
