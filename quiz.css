@@ -1,11 +1,11 @@
 .choice-container{
     display: flex;
-    margin-bottom: 8px;
-    width: 50%;
+   
+    width: 70%;
     font-size:20px;
     border: 1.4px solid #a476ff;
     background-color: white;
-  
+    margin: 8px auto;
 
 }
 
