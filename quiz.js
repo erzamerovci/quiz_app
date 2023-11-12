@@ -153,6 +153,10 @@ choices.forEach(choice=>{
        const selectedChoice=e.target;
        const selectedAnswer=selectedChoice.dataset['number'];
 
+      
+       const classToApply = selectedAnswer==currentQuestion.answer ? 'correct' : 'incorrect';
+       
+       selectedChoice=parentElement.classList.add(classToApply);
        getNewQuestion();
 
     });
