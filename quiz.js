@@ -43,7 +43,7 @@ let questions = [
     choice2: "Numbers",
     choice3: "True",
     choice4: "Null ",
-    answer: 1,
+    answer: 2,
   },
   {
     question: "What is String data type used for? ",
@@ -101,7 +101,7 @@ let questions = [
   },
 ];
 
-const CURRENT_POINTS = 10;
+const CORRECT_BONUS = 10;
 const MAX_QUESTION = 10;
 
 startGame = () => {
@@ -143,6 +143,9 @@ choices.forEach((choice) => {
     const classToApply =
       selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
 
+      if(classToApply=='correct'){
+        incrementScore(CORRECT_BONUS);
+      }
     selectedChoice.parentElement.classList.add(classToApply);
     setTimeout(() => {
       selectedChoice.parentElement.classList.remove(classToApply);
@@ -151,4 +154,8 @@ choices.forEach((choice) => {
   });
 });
 
+incrementScore = num => {
+    score +=num;
+    scoreText.innerText=score;
+}
 startGame();
