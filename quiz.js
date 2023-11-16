@@ -1,7 +1,7 @@
 const question = document.getElementById("question");
 const choices = Array.from(document.getElementsByClassName("choice-text"));
-console.log(choices);
-
+const questionCounterText=document.getElementById("questionCounter");
+const scoreText=document.getElementById("score");
 let currentQuestion = {};
 let acceptAnswers = false;
 let score = 0;
@@ -38,7 +38,7 @@ let questions = [
   },
 
   {
-    question: "What is String data type used for? ",
+    question: "What is INT data type used for? ",
     choice1: "Text",
     choice2: "Numbers",
     choice3: "True",
@@ -116,6 +116,9 @@ getNewQuestion = () => {
     return window.location.assign("/end_game.html");
   }
   questionCounter++;
+
+  questionCounterText.innerText=questionCounter+ "/" + MAX_QUESTION;
+
   const questionIndex = Math.floor(Math.random() * availableQuestion.length);
   currentQuestion = availableQuestion[questionIndex];
   question.innerText = currentQuestion.question;
@@ -144,7 +147,7 @@ choices.forEach((choice) => {
     setTimeout(() => {
       selectedChoice.parentElement.classList.remove(classToApply);
       getNewQuestion();
-    }, 1000);
+    }, 200);
   });
 });
 
